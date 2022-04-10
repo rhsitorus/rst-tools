@@ -1,3 +1,5 @@
-This is the guidance
+# Guidelines 
 
-adding dependency
+## Instalation
+
+`pip install rst-tools`
