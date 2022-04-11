@@ -57,6 +57,7 @@ print(attributes)
 ```python
 import pandas as pd
 from rst_tools.models.vprs import VariablePrecisionRoughSet
+from rst_tools.models.reduct import reduct
 
 
 df = pd.read_csv("YOUR/FILE.csv")
