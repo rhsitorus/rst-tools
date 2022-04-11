@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "rst-tools"
-version = "0.1.6"
+version = "0.1.7"
 description = "Rough sets implementation for Python"
 authors = ["Rofilde Hasudungan <rofilde@gmail.com>"]
 readme = "README.md"
