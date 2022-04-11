@@ -1,23 +1,15 @@
-def reduct(model, attrs, dec) :
+def reduct(model, attributes, dec) :
     k = model.konsistensi_tabel(attrs, dec)
 
-    # print("Konsistensi Tabel %f" % k)
-
-    visited = []
-    remove = []
-
-    remove = [] 
-    for a in attrs:
-        R = remove.copy()
+    remove_attributes = [] 
+    for a in attributes:
+        R = remove_attributes.copy()
         R.append(a) 
-        S = set(attrs) - set(R)
-        k_r = model.konsistensi_tabel(list(S), dec)
-        if k_r == k:
-            remove.append(a)
+        S = set(attributes) - set(R)
+        k_s = model.konsistensi_tabel(list(S), dec)
+        if k_s == k:
+            remove_attributes.append(a)
 
-    # print(remove)
-
-    reduct = list(set(attrs) - set(remove))
+    reduct = list(set(attributes) - set(remove_attributes))
     reduct.sort()
-    return reduct, k, remove
-    # print("The reduct is %s" % reduct)
+    return reduct, k, remove_attributes
