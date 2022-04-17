@@ -73,3 +73,33 @@ print("Atribut reduksi %s" % (reducts))
 
 '''....'''
 ```
+
+### Similarity Rough Sets
+
+```python
+from rst_tools.models.similarity import SimilarityRoughSets as SRS 
+from rst_tools.models.reduct import reduct
+import pandas as pd 
+
+dataset = pd.read_csv("YOUR/FILE.csv")
+attributes = list(dataset.columns.values)
+cond_attrs = attributes
+dec_attr = cond_attrs[-1]
+del cond_attrs[-1]
+
+print("alpha ", end="")
+alpha = float(input())
+srs = SRS(dataset, alpha)
+
+ud, R = srs.ind(cond_attrs)
+
+
+sub = srs.subsetU(dec_attr)
+
+k= srs.gamma(cond_attrs, dec_attr)
+alpha= srs.alph(cond_attrs, dec_attr)
+print(k)
+print(alpha)
+
+'''....'''
+```
